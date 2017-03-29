@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <script src="./stellar-sdk.js"></script>
+    <script src="./stellar.js"></script>
+    <script src="game.js"></script>
+    <script>
+        InitStellar();
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Player1 Account:</td>
+            <td><input id="player1Account" type="text" size=65 value="GAZZFIE5PIXIJES2MB6R3FZUWFRIFS6VXB4RDTARCUGKJZVHLHA4X65Q" /></td>
+            <td>XLM Balance:</td>
+            <td><input id="player1Balance" type="text" size=14 readonly></td>
+        </tr>
+        <tr>
+            <td>Player1 Signer:</td>
+            <td><input id="player1Signer" type="text" size=65 value="SBPMYQF5HKXIZNNQRM3VC3U6TTSNRKXSWWBQQNWTVH6BY7MSUKP66PT3" /></td>
+            <td>Ready</td>
+            <td><input id="player1Ready" type="text" size=14 readonly disabled="disabled" value="Not Ready" /></td>
+        </tr>
+        <tr>
+            <td>Player2 Account:</td>
+            <td><input id="player2Account" type="text" size=65 value="GBNEV3Y7GADL5MSMV65KLQFUIQQOYXVU4N5FAADSNXP7LEOTF27MBY3O" /></td>
+            <td>XLM Balance:</td>
+            <td><input id="player2Balance" type="text" size=14 readonly></td>
+        </tr>
+        <tr>
+            <td>Player2 Signer:</td>
+            <td><input id="player2Signer" type="text" size=65 value="SBOBWQG2SCYJO62AFZG4YCLAQQ2U2YQCQOGF5F3FUA6P4GMY3LXAC6Z7" /></td>
+            <td>Ready</td>
+            <td><input id="player2Ready" type="text" size=14 readonly disabled="disabled" value="Not Ready" /></td>
+        </tr>
+
+        <tr>
+            <td colspan=4>
+                <table>
+                    <tr>
+                        <td>Do you choose rock, paper or scissors?</td>
+                        <td><input type="radio" name="userChoice" value="rock">Rock</input>
+                        </td>
+                        <td><input type="radio" name="userChoice" value="paper">Paper</input>
+                        </td>
+                        <td><input type="radio" name="userChoice" value="scissors">Scissors</input>
+                        </td>
+                        <td><button id="PlayGame" disabled="disabled" onclick="playGame()">Play Game!</button></td>
+                        <td>Wager: <input id="wager" type="text" value="10" size=4/></td>
+                        <td><button id="Set Wager" onclick="LoadBalance('player1'); LoadBalance('player2');">Load Balances</button></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!--
+        <tr>
+            <td colspan=4>
+                <input type="text" id="playerMessage" size="120" value="" readonly/>
+            </td>
+        </tr>
+				-->
+        <tr>
+            <td colspan=4>
+                <textarea id="results" rows="20" cols="120"></textarea>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
